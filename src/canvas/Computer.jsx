@@ -54,7 +54,7 @@ export const computersCanvas = () => {
         setIsMobile(mediaQuery.matches)
 
         const handleMediaQueryChange = (e) => {
-            setIsMobile(event.matches)
+            setIsMobile(e.matches)
         }
 
         mediaQuery.addEventListener("change", handleMediaQueryChange)
