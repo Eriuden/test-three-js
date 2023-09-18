@@ -1,5 +1,7 @@
 import { Html, useProgress } from "@react-three/drei";
 
+//Là, pas dur à comprendre, html en three, c'est pour des éléments HTML
+
 const CanvasLoader = () => {
   const { progress } = useProgress();
   return (
