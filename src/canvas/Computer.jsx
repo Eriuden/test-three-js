@@ -8,7 +8,7 @@ import CanvasLoader from "../loader"
 //On a déjà ici des éléments de base, il faudra juste retravailler les lumières
 //SketchFab m'a été conseillé
 
-export const Computers = () => {
+export const Computers = ({isMobile}) => {
     //import du modèle de base (non présent ici cependant)
     const computer = useGLTF("./desktop_pc/scene.gltf")
 
@@ -33,8 +33,8 @@ export const Computers = () => {
             />
             <primitive 
                 object={computer.scene}
-                scale={0.75}
-                position=/*x,y,z*/{[0,-3.25,-1.5]}
+                scale={isMobile ? 0.70: 0.75}
+                position=/*x,y,z*/{isMobile ? [0,-3, -2.2] : [0,-3.25,-1.5]}
                 rotation={[-0.01,-0.2,-0.1]}
             />
         </mesh>
@@ -77,7 +77,7 @@ export const computersCanvas = () => {
                 maxPolarAngle={Math.PI /2}
                 minPolarAngle={Math.PI /2}
             />
-            <Computers />
+            <Computers isMobile={isMobile} />
         </Suspense>
 
         <Preload all />
