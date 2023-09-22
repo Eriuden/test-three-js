@@ -2,7 +2,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
-import CanvasLoader from "../loader"
+
 
 //A noter, il existe des tonnes de modèles gratuit sur le net
 //On a déjà ici des éléments de base, il faudra juste retravailler les lumières
@@ -72,17 +72,17 @@ export const computersCanvas = () => {
             gl={{ preserveDrawingBuffer: true}}
         >
 
-        <Suspense fallback={<CanvasLoader />}>
-            <OrbitControls enableZoom={false}
-                maxPolarAngle={Math.PI /2}
-                minPolarAngle={Math.PI /2}
-            />
-            <Computers isMobile={isMobile} />
-        </Suspense>
+            <Suspense>
+                <OrbitControls enableZoom={false}
+                    maxPolarAngle={Math.PI /2}
+                    minPolarAngle={Math.PI /2}
+                />
+                <Computers isMobile={isMobile} />
+            </Suspense>
 
-        <Preload all />
+            <Preload all />
 
-    </Canvas>
+        </Canvas>
 
     )
     
