@@ -6,6 +6,10 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+/*Il est necessaire de créer un compte sur email JS pour disposer
+ des deux id en contrebas
+ En somme, ca marche comme une API, on va chopper des keys*/
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
